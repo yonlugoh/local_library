@@ -1,3 +1,6 @@
+const { body,validationResult } = require('express-validator/check');
+const { sanitizeBody } = require('express-validator/filter');
+
 var Genre = require('../models/genre');
 var Book = require('../models/book');
 var async = require('async');
@@ -36,13 +39,14 @@ exports.genre_detail = function(req, res, next) {
             return next(err);
         }
         // Successful, so render
-        res.render('genre_detail', { title: 'Genre Detail', genre: results.genre, genre_books: results.genre_books } );
+        res.render('genre_detail', { title: 'Genre Detail for '+ results.genre.name , genre: results.genre, genre_books: results.genre_books } );
     });
 
 };
+
 // Display Genre create form on GET.
-exports.genre_create_get = function(req, res) {
-    res.send('NOT IMPLEMENTED: Genre create GET');
+exports.genre_create_get = function(req, res, next) {       
+    res.render('genre_form', { title: 'Create Genre' });
 };
 
 // Handle Genre create on POST.
