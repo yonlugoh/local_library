@@ -7,11 +7,15 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var catalogRouter = require('./routes/catalog');  //Import routes for "catalog" area of site
+
+var compression = require('compression');
+var helmet = require('helmet');
 var wiki = require('./wiki.js');
 
 
 var app = express();
-
+app.use(compression()); //Compress all routes
+app.use(helmet());
 //Set up mongoose connection
 var mongoose = require('mongoose');
 var mongoDB = 'mongodb://yonlugoh:password123@ds147391.mlab.com:47391/local_library9001';
