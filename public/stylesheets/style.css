@@ -15,7 +15,10 @@ body {
 }
 
 hr {
-border-color: black!important;
+	width:90%;
+	margin-left: 0px;
+    margin-right: auto;
+	border-color: black!important;
 }
 
 .row {
