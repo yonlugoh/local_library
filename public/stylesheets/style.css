@@ -1,14 +1,23 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-image: linear-gradient(90deg, #E3FDF5 0%, #FFE6FA 80%);
-  background-repeat: repeat;
-  background-size: auto;
+  background: #12c2e9;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   
 }
-sidebar{
 
-  background: #white;
+.col-sm-2 {
+
+    padding: 24px 0;
+
+}
+
+.row {
+    background: rgba(255, 255, 255, 0.8);
+    overflow-x: show;
+    padding-bottom: 16px;
 
 }
 a {
